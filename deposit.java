@@ -167,13 +167,13 @@ public class deposit extends javax.swing.JFrame {
             String DATE = date.toString();
 
             while (rs.next()) {
-                String Account_num = rs.getString("Account_num");
+                String Account_num = rs.getString("Acc_num");
                 String Balance = rs.getString("Balance");
 
                 if (accnum.equals(Account_num)) {
                     int bal = Integer.valueOf(Balance);
                     String totalbal = String.valueOf(bal + depamt);
-                    String update = "UPDATE Account_detail set Balance=? where Account_num=?";
+                    String update = "UPDATE Account_detail set Balance=? where Acc_num=?";
                     PreparedStatement up = conn.prepareStatement(update);
                     up.setString(1, totalbal);
                     up.setString(2, accnum);

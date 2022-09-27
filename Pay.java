@@ -234,7 +234,7 @@ public class Pay extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                String Account_num = rs.getString("Account_num");
+                String Account_num = rs.getString("Acc_num");
                 String Balance = rs.getString("Balance");
 
                 if (accnum.equals(Account_num)) {
@@ -282,7 +282,7 @@ public class Pay extends javax.swing.JFrame {
                     dispose();
                     balance=balance-amti;
                     String bal=String.valueOf(balance);
-                   String update="UPDATE Account_detail set Balance=? where Account_num=?";
+                   String update="UPDATE Account_detail set Balance=? where Acc_num=?";
                    PreparedStatement up=conn.prepareStatement(update);
                    up.setString(1, bal);
                    up.setString(2, accnum);

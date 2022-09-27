@@ -222,7 +222,7 @@ public class billpay extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                String Account_num = rs.getString("Account_num");
+                String Account_num = rs.getString("Acc_num");
                 String Balance = rs.getString("Balance");
 
                 if (accnum.equals(Account_num)) {
